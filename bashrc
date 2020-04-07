@@ -22,7 +22,10 @@ export PS1="$CYAN\u@\h${DEFAULT_COLOR}:${BLUE}\w${RED}\$(__git_ps1)${DEFAULT_COL
 # nvm
 if [ -e ~/.nvm/nvm.sh ]; then
   source ~/.nvm/nvm.sh
+  export NODE_OPTIONS=--max_old_space_size=4096
 fi
 
-
-
+if [ -e "/Users/cct-kengo-kurobane/.sdkman/bin/sdkman-init.sh" ]; then
+  export SDKMAN_DIR=~/.sdkman
+  source "$SDKMAN_DIR/bin/sdkman-init.sh"
+fi 
